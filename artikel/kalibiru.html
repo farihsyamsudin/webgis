@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Kalibiru</div>
+
+<div id="mapkalibiru" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Kalibiru adalah kawasan hutan lindung yang berdiri ditas perbukitan dengantanah yang bergelomban dan berada di ketinggian 450 meter dari atas permukaan laut dengan titik koordinat 7,8°LU dan 110,12°BT. Hutan lindung ini di kelola oleh masyarakat yan di manfaatkan sebagai objek wisata yang bisa meningkatkan nilai ekonomi dan juga sebagai tujuan untuk melestarikan kawasan hutan.  Suasana kalibiru yang kental akan suasana pedesaan dengan rindangnya pepohonan disana dan juga udara segar yang di sajikan. Bukan hanya itu yang dapat di sajikan oleh objek wisata kalibiru, tetapi karena keindahannya yang sangat mempesona yang akn wisatawan temukan di puncak bukit.</p>
+    <p class="my-8">Di dekat penjualan tiket msuk juga ada beberapa warung yang dapat di manfaatkan oleh wisatawan untuk mengistirahatkan badan dan juga memulihkan tenaga sebelum melanjutkan perjalanan. Pesono keindahan kalibiru yang di lewat landskap berlatar belakang hamparan air berwarna kebiruan di bendungan Sermo serta perbukitan menoreh yang didominasi oleh warna hijau pepohonan. Selain menimati kendahan alam, banyak aktifitas yang dapat di laukan para wisatawan saat berada di sana, yaitu oara wisatawan dapat berfoto ria dengan memanfaatkan lima spot utama yang disediakan oleh pihak pengelola di sana.</p>
+    <p class="my-8">Kelima spot tersebut berbayar dan memiliki harga yang berbeda-beda. Tiga spot yaitu spot 1, spot panggung dan spot bundar bertarif Rp.15.000, sedang spot 2 dan spot love bertarif Rp.10.000. aktifitas yang dapat dilakukan dikalibiru yang tidak kalah serunya adalah beberapa permainan outbond,  seperti wooden bridge, spider web, climbing, sling dan flying fox dengan ketinggian sekitar 6 – 7 meter dari atas permukaan tanah. Untuk dapat menikmati permainan outbond tersebut wisatawan cukup membayar seharga Rp.35.000. Harga tersebut sudah termasuk peminjaman alat pengaman berupa helm dan full body harness.</p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Kalibiru
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/kalibiru/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kalibiru/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kalibiru/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kalibiru/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kalibiru/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var mapkalibiru = L.map('mapkalibiru').setView([-7.80731, 110.12605], 14);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(mapkalibiru);
+
+// var marker = L.marker([-7.80731, 110.12605]).addTo(mapkalibiru);
+
+var circle = L.circle([-7.80731, 110.12605], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 400
+}) . addTo(mapkalibiru);
+
+var hotel1 = L.marker([-7.798536,110.117943]).addTo(mapkalibiru);
+var hotel2 = L.marker([-7.806360,110.128157]).addTo(mapkalibiru);
+
+hotel1.bindPopup(
+    "<b>Penginapan Jemakir Homestay</b><br>Harga per Malam : Rp. 123.128- Rp. 165.804<br><br>Fasilitas : WiFi gratis, jemputan kendaraan,area parkir, area merokok, dapur kecil, meja, pancuran"
+);
+hotel2.bindPopup(
+    "<b>Penginapan Homestay Munggang</b><br>Harga per Malam : Rp. 250.000<br><br>Fasilitas : tempat parkir gratis, WiFi gratis,meja makan,kasur"
+);
+
+circle.bindPopup("<b> Kawasan Wisata Kalibiru </b>").openPopup();
+
+
+</script>
+</body>
+
+</html>

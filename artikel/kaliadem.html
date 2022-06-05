@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Bunker Kaliadem</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Bunker Kaliadem berada di Desa Kinahrejo, Hargoninangun, Kecamatan Pakem, Sleman. Bangunan itu dibangun pada tahun 2001 oleh Pemerintah Kabupaten Sleman dan diresmikan empat tahun kemudian. Untuk HTM tempat wisata Bunker Kaliadem adalah sebesar 10k per orang. Untuk harga sewa Jeep 350 dengan rute pendek dan muat 5-6 orang. Tempat wisata ini sangat indah akan pesonanya namun memiliki sejarah yang kelam.</p>
+    <p class="my-8">Wilayah di lereng Gunung Merapi merupakan zona berbahaya. Di sana ada ratusan ribu penduduk yang tak bisa lepas dari ancaman letusan salah satu gunung paling aktif di dunia itu. Maka dari itu, dibangunlah beberapa buah bunker yang dilihat bagi para warga yang tidak bisa dibawa ke diri sendiri atau bisa disebut bunker adalah tempat berlindung ketika ada letusan atau erupsi gunung. Namun fungsi dari keberadaan bunker-bunker ini dipertanyakan kembali setelah kejadian letusan Gunung Merapi yang terjadi pada tahun 2006, setelah gempa 27 Mei meluluh lantakkan Jogja. Letusan Merapi pada tahun itu memang hanya menelan sedikit korban dan tak ada apa-apanya dari letusan Merapi empat tahun pengorbanan. Tapi dua korban itu nyawanya hilang justru ketika mereka berlindung di dalam salah satu tempat perlindungan, Bunker Kaliadem, untuk berlindung dari luncuran “wedhus gembel" Merapi. Itu karena bunker tak mampu menahan suhu ekstrem dari awan panas yang mengalir turun. Kedua relawan itu tewas di dalam dan jenazahnya ditemukan di ruang toilet bunker.</p>
+    <p class="my-8">Pada ledakan besar Gunung Merapi tahun 2010, bunker ini kembali terkena terjangan awan panas. Bahkan peningkatan besarnya letusan itu, Bunker Kaliadem sampai terkubur di bawah material vulkanik sedalam 4 meter.</p>
+    <p class="my-8">Karena berbagai petunjuk yang menandakan keberadaan bunker itu hilang karena terjangan erupsi, petugas dan perangkat desa membutuhkan 54 jam untuk melakukan pengerukan dengan alat berat sebelum bunker ini ditemukan.</p>
+    <p class="my-8">Kini, keberadaan Bunker Kaliadem menjadi salah satu destinasi wisata yang banyak dikunjungi wisatawan walaupun sebenarnya tempat itu sempat sepi pengunjung. Mereka berkunjung ke bunker karena rasa penasaran mengingat cerita mistis mengenai bunker itu. Pengunjung yang ingin pergi ke tempat ini bisa menggunakan motor atau kendaraan offroad Merapi Lava Tour. Selain menceritakan sejarah kelam dan aura mistis, tempat-tempat di sekitar bunker Kaliadem menyajikan pemandangan yang indah mengingat lokasinya cukup dekat dengan Gunung Merapi.</p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Bunker Kaliadem
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/kaliadem/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kaliadem/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kaliadem/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kaliadem/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kaliadem/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kaliadem/6.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var map = L.map('map').setView([-7.5826409,  110.4477366], 13);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.5826409,  110.4477366]).addTo(map);
+
+var circle = L.circle([-7.5826409,  110.4477366], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 500
+}) . addTo(map);
+
+var hotel1 = L.marker([-7.607003, 110.421731]).addTo(map);
+var hotel2 = L.marker([-7.607327, 110.419711]).addTo(map);
+// var hotel3 = L.marker([-7.715928, 110.405864]).addTo(map);
+
+circle.bindPopup("<b> Kawasan Wisata Bunker Kaliadem </b>").openPopup();
+hotel1.bindPopup(
+    "<b>D'Kaliurang Resort & Convention</b><br>Harga per Malam : Rp. 376.654 <br><br>Fasilitas : Kamar tamu memiliki dapur kecil, kulkas, dan penyejuk udara, dan Griya Persada Convention Hotel & Resort membuat terhubung dengan internet semakin mudah karena menawarkan wi-fi gratis. Anda juga dapat menggunakan fasilitas yang disediakan oleh hotel kecil, seperti resepsionis 24 jam, layanan kamar, dan layanan concierge. Para tamu juga dapat menikmati kolam renang dan sarapan saat mereka menginap. Untuk menambah kenyamanan, parkir gratis tersedia untuk para tamu."
+);
+hotel2.bindPopup(
+    "<b>Java Amazon Villa & Resort </b><br>Harga per Malam : Rp. 578.000 <br><br>Fasilitas : Wifi dan parkir gratis"
+);
+</script>
+</body>
+
+</html>

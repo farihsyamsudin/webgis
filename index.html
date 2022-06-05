@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lateef&family=Libre+Caslon+Display&family=Mali:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '4px 4px 4px 4px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    },
+                    fontFamily : {
+                        lt : ['Lateef'],
+                        libre : ['Libre Caslon Display'],
+                    },    
+                    },
+                },
+            };
+    </script>
+    <title>Destinasi Wisata Jogjakarta</title>
+</head>
+<body class="bg-[url('img/bg.png')] overflow-x-hidden">
+
+    <div id="home" class="h-screen">
+        <img src="img/hp.jpg" alt="" class="brightness-[.65] h-screen bg-cover blur-lg scale-125 absolute -z-30">
+        <div class="xl:flex justify-around">
+        <a href="#title" class="transition"><div class="font-lt text-3xl xl:ml-4 xl:mt-4 p-2 text-center xl:w-96 w-full  text-white bg-cyan-600 xl:rounded-xl  hover:bg-cyan-700 xl:hover:scale-105 hover:cursor-pointer active:bg-cyan-900 ">Home  </div></a>
+        <a href="#artikel"><div class="font-lt text-3xl xl:ml-4 xl:mt-4  p-2 text-white bg-cyan-600 xl:w-96 text-center xl:rounded-xl hover:bg-cyan-700 xl:hover:scale-105 hover:cursor-pointer active:bg-cyan-900 ">Artikel Wisata </div></a>
+        <a href="#about"><div class="font-lt text-3xl xl:ml-4 xl:mt-4 p-2  text-white bg-cyan-600 xl:w-96 xl:rounded-xl text-center hover:bg-cyan-700 xl:hover:scale-105 hover:cursor-pointer active:bg-cyan-900 ">About </div></a>
+        </div>
+        <div class="bg-transparet shadow-3xl p-4 xl:mt-20 mt-10 max-w-[410px] mx-auto">
+            <h1 class=" opacity-70 font-libre text-center text-white font-bold text-7xl tracking-widest italic ">Special Region for
+                <br>Your Adventures</h1>
+            <a href="#title"><h2 class="text-center font-libre mt-10 text-white font-extrabold blur-sm hover:blur-none hover:cursor-pointer text-7xl tracking-widest ">GO</h2></a>
+        </div>
+    </div>
+
+    <div id="title" class="w-full bg-gradient-to-tr from-cyan-500 to-blue-600 text-center pt-2 text-4xl pb-4 shadow-0xl">
+        <span class="tracking-widest italic">Peta Persebaran Destinasi Wisata Jogjakarta</span>
+    </div>
+
+    <div id="titik0" class="w-full h-96 mx-auto shadow-3xl rounded-xl"></div>
+    
+    <div id="heroartikel" class="p-16 tracking-wide bg-transparent rounded-md shadow-0xl text-cyan-600 font-bold">
+        <p class="">Yogyakarta merupakan sebuah daerah istimewa dalam Negara Kesatuan Republik Indonesia yang masih mempertahankan pemerintahan berbentuk kesultanan dalam pemerintahan daerahnya. Pada masa sebelum kemerdekaan, Jogja adalah daerah dengan pemerintahan sendiri yang bergelar Kesultanan Ngayogyakarta dan Kadipaten Pakualaman.</p>
+        <p class="mt-4">Wilayah ini memiliki tata kelola pemerintahan dengan sistem kesultanan. Namun RI merdeka, kedua pemerintahan ini bergabung dalam wilayah kesatuan RI dengan Undang-undang yang mengatur pemerintahan daerahnya. Jadi alasan Yogyakarta menjadi kota istimewa adalah karena sistem otonomi daerah yang khusus. Otonomi daerah adalah kewenangan suatu daerah untuk mengatur dan mengurus daerahnya sendiri. Keberadaan Kesultanan Yogyakarta dan Kadipaten Pakualaman sejak zaman dahulu, menjadi asal mula munculnya status istimewa ini. Selain itu pemilihan gubernur juga bukan berdasarkan pemilu seperti daerah provinsi lainnya, gubernur Yogyakarta akan langsung dipilihkan dari keturunan Sultan yang memimpin Yogyakarta sejak zaman dulu.</p>
+        <p class="mt-4">Selain dari segi otonomi daerah, Yogyakarta memiliki keistimewaan lain berupa kota dengan banyak warisan budaya dan bangunan bersejarah. Banyak budaya yang ada di Yogyakarta yang menjadi ciri khas kota tersebut, seperti kesenian membatik, Sekaten, Sendratari Ramayana, Labuhan, dan wayang kulit. Inilah yang menjadi Jogja sebagai tempat tujuan wisata utama karena keunikan daerah nya, masih kentalnya budaya daerah tersebut dan banyak nya tempat wisata yang indah mulai dari pantai sampai gunung ada dijogja.</p>
+        <p class="mt-4">Selain itu, Yogyakarta juga terkenal dengan julukan Kota Pelajar saking banyaknya kampus dan institusi pendidikan tinggi yang menjadi tempat menuntut ilmu bagi mahasiswa dari seluruh Indonesia seperti UGM, UNY, UPNV Jogja dan masih banyak lagi.</p>
+    </div>
+
+    <h2 id="artikel" class="text-center mt-10 text-5xl italic tracking-wider">Artikel Destinasi Wisata Jogjakarta</h2>
+
+    <div id="container" class="p-16 flex justify-around flex-wrap">
+
+        <a href="artikel/kalibiru.html">
+        <div id="card1" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/kalibiru.JPG" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-40 text-white">Kalibiru</h1>
+            <p class="absolute top-10 text-white">Kalibiru adalah kawasan hutan lindung yang berdiri ditas perbukitan dengantanah yang bergelomban dan berada di ketinggian 450 meter dari atas permukaan laut dengan titik koordinat 7,8°LU dan 110,12°BT. Hutan lindung ini.....</p>
+        </div>
+        </a>
+
+        <a href="artikel/kedung.html">
+        <div id="card2" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl  hover:shadow-0xl">
+            <img src="img/kedung.jpg" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-[107px] text-white">Air Terjun Kedung Pedut</h1>
+            <p class="absolute top-10 text-white">Air Terjun Kedung Pedut merupakan salah satu wisata alam yang terletak di Jogja lebih tepatnya di daerah Kulon Progo. Berlokasi di Pegunungan Manoreh tepatnya di dusun kembang, Desa Jatimulyo...</p>
+        </div>
+        </a>
+
+        <a href="artikel/kaliadem.html">
+        <div id="card3" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/kaliadem.jpg" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-[162px] text-white">Kaliadem</h1>
+            <p class="absolute top-10 text-white">Bunker Kaliadem berada di Desa Kinahrejo, Hargoninangun, Kecamatan Pakem, Sleman. Bangunan itu dibangun pada tahun 2001 oleh Pemerintah Kabupaten Sleman dan diresmikan empat tahun kemudian. Untuk HTM...</p>
+        </div>
+        </a>
+
+        <a href="artikel/malioboro.html">
+        <div id="card4" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/malioboro.JPG" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-[158px] text-white">Malioboro</h1>
+            <p class="absolute top-10 text-white">Malioboro merupakan suatu kawasan yang merupakan gabungan dari tiga jalan yaitu Jalan Margo Utomo, Jalan Malioboro dan Jalan Margo Mulyo. Kawasan yang legendaris tersebut...</p>
+        </div>
+        </a>
+
+        <a href="artikel/borobudur.html">
+        <div id="card5" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/borobudur.jpg" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-32 text-white">Candi Borobudur</h1>
+            <p class="absolute top-10 text-white">Candi Borobudur merupakan candi Buddha yang sekelilingnya merupakan taman luas dan berada di tengah gunung-gunung menjulang tinggi. Candi Borobudur terletak di desa Borobudur, Kecamatan Borobudur,...</p>
+        </div>
+        </a>
+
+        <a href="artikel/breksi.html">
+        <div id="card6" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/breksi.jpeg" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-36 text-white">Tebing Breksi</h1>
+            <p class="absolute top-10 text-white">Tebing Breksi merupakan tempat wisata berupa bekas penambangan kapur yang disulap menjadi destinasi wisata yang menjanjikan wisatawan yang melihatnya. Tempat wisata ini berada di Jl...</p>
+        </div>
+        </a>
+
+        <a href="artikel/prambanan.html">
+        <div id="card7" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/prambanan.jpeg" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-32 text-white">Candi Prambanan</h1>
+            <p class="absolute top-10 text-white">Candi Prambanan atau Candi Roro Jonggrang (bahasa Jawa: ꦕꦤ꧀ꦝꦶ​ꦥꦿꦩ꧀ꦧꦤꦤ꧀, translit. Candhi Prambanan) adalah kompleks candi Hindu (Syaiwa) terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Candi ini dipersembahkan untuk Trimurti, tiga dewa utama Hindu yaitu...</p>
+        </div>
+        </a>
+
+        <a href="artikel/mundal.html">
+        <div id="card8" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/mudal.png" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-36 text-white">Sungai mudal</h1>
+            <p class="absolute top-10 text-white">Taman Sungai Mudal adalah sebuah objek wisata alam terbuka yang terletak di Kabupaten Kulon Progo, yang menawarkan pesona sebuah kolam pemandian yang bersumber dari ...</p>
+        </div>
+        </a>
+
+        <a href="artikel/parangtritis.html">
+        <div id="card9" class="w-96 h-48 rounded-md mb-10 text-center hover:scale-105 hover:cursor-pointer group transition relative shadow-3xl hover:shadow-0xl">
+            <img src="img/parangtritis.jpg" alt="" class="w-96 h-48 rounded-md absolute contrast-50 group-hover:contrast-[.65] transition">
+            <h1 class="font-bold absolute left-36 text-white">Pantai Parangtritis</h1>
+            <p class="absolute top-10 text-white">Parang tritis, adalah salah satu obyek wisata yang berada di selatan kota Yogyakarta yang beralamat di ...</p>
+        </div>
+        </a>
+
+    </div>
+
+    <div id="about" class="min-h-screen bg-gradient-to-tr from-cyan-500 to-blue-600 px-10 rounded-t-lg shadow-3xl">
+        <h1 class="text-4xl bg-slate-600 rounded-b-lg p-4 text-center">About</h1>
+        
+        <div class="max-w-[800px] shadow-3xl bg-transparent mx-auto p-6 text-white m-8 mt-36">
+            <p>Artikel ini dibuat untuk memenuhi tugas akhir Mata Kuliah Sistem Informasi Geografis, dengan memanfaatkan fitur leafletjs untuk membuat webgis, semoga pengunjung dapat menikmati website yang telah kami buat ini!, semua artikel dan foto yang terdapat dalam website ini kami dapatkan dari berbagai artikel, kami memohon maaf sebelumnya jika ada foto yang kami gunakan secara sembarangan, semua ini hanya diperlukan untuk memenuhi tugas akhir bagi kami. Salam sehat sejahtera bagi kita semua! coresponding author: <a href="http://www.instagram.com/cursaaa">farihsyamsudin31@upi.edu</a></p>
+        </div>
+        <!-- <hr> -->
+        <!-- <h2 class="text-4xl rounded-lg p-4 text-center text-white font-lt italic tracking">Our Team</h1>
+            <div id="foto" class="flex flex-wrap justify-evenly">
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/2.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Caca, help find for article</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div>
+                <div src="" alt="" class="relative bg-[url('img/foto/1.jpg')] bg-no-repeat bg-cover w-28 h-28 rounded-full m-4 group hover:animate-bounce transition hover:cursor-pointer">
+                    <div class="absolute group-hover:-bottom-[110px] group-hover:inline hidden w-28 h-28 text-center">
+                        <h1 class="text-white">Farih, as a programmer</h1>
+                    </div>
+                </div> -->
+
+            </div>
+            
+    </div>
+    <div id="cr" class="max-w-full text-center bg-slate-700 p-2 text-xl">Footer</div>
+    
+    <!-- Klik (ON PROJECT) -->
+
+    <!-- <div id="malioboro" class="absolute top-5 left-64 w-[800px] h-96 bg-slate-400 hidden">
+        <div id="close" class="absolute w-10 h-10 bg-black rounded-full -top-5 -right-5 text-white text-center pt-2 hover:cursor-pointer"> X </div>
+        <h3 class="font-bold text-center mt-4 text-4xl">Wisata Malioboro</h3>
+    </div> -->
+
+
+<script src="script.js"></script>
+</body>
+</html>

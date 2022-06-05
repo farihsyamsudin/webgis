@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinassi Wisata Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Air Terjun Kedung Pedut</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Air Terjun Kedung Pedut merupakan salah satu wisata alam yang terletak di Jogja lebih tepatnya di daerah Kulon Progo. Berlokasi di Pegunungan Manoreh tepatnya di dusun kembang, Desa Jatimulyo, Kecamatan Girimulyo. Harga tiket nya hanya Rp 3000 dan untuk parkir motor Rp 2000 sedangkan untuk parkir mobil Rp 5000.</p>
+    <p class="my-8">Untuk menuju ketempat ini, wisatawan harus menaiki gunung melewati jalur diatas perbukitan menoreh.  tetapi selama menaiki gunung melewati jalur diatas perbukitan menoreh wisatawan disuguhi pemandangan yang indah dan asri khas Kulon Progo, seperti raturan sawah yang hijau nan asri dengan metode tanam terasering, lalu naik ke pegunungan akan melihat tebing-tebing tinggi miring berlumut yang dipenuhi pohon pada salah satu sisinya, dan jurang yang sangat dalam pada sisi lain.</p>
+    <p class="my-8">Keunggulan dan keunikan Air Terjun Kedung Pedut ini yaitu sumber mata airnya yang berasal dari dalam bumi--seolah tak pernah habis atau mengering. Hal ini yang membuat Kedung Pedut dijuluki Surga Air Kulon Progo, lantaran airnya yang tak pernah habis meski di musim kemarau.</p>
+    <p class="my-8">Kawasan ini baru dibuka untuk umum pada tanggal 15 februari 2015. Warga sekiitar biasanya menyebut air terjun ini dengan nama waterpark alami. Karena, di tempat ini ada sebuah kolam renang yang terbentuk secara alami. Airnya pun berasal dari sumber mata air yang terjun dari sebuah air terjun yang jaraknya tidak jauh dari kawasan ini.</p>
+    <p class="my-8">Pengelola Air Terjun Kedung Pedut sudah menyediakan beragam spot foto menarik di sini mulai dari helikopter terparkir di tepi kolam pemandian hingga berfoto di hammock. Spot-spot tersebut biasa digunakan pengunjung untuk berfoto karena keunikannya yang tak dapat ditemukan di kolam pemandian lainnya. Ada satu fasilitas yang menawarkan flying fox untuk wisatawan tersebut. Flying fox ini memiliki panjang lintasan sekitar 40 meter.</p>
+    <p class="my-8">Kedut pedut berasal dari dua kata, yaitu kedung yang berarti genangan, dan pedut yang berarti dalam. Jadi, kedung pedut mempunyai arti genangan air yang cukup dalam. Dilihat dari kedalamannya memang cukup dalam, sekitar 2 sampai 3 meter. Dalam sekali bukan? Bahkan kolam renang buatan jarang memakai kedalaman seperti ini. Sebenarnya, kolam ini ada dua, dimana yang satu berada di dekat air terjun utama. Tetapi disarankan yang tidak dapat berenang cukup menikmatinya saja karena kawasan ini cukup berbahaya.</p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Air Terjun Kedung Pedut
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/kedung/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kedung/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kedung/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kedung/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/kedung/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var map = L.map('map').setView([-7.7699331,110.12099], 12);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.7699331,110.12099]).addTo(map);
+
+var circle = L.circle([-7.7699331,110.12099], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 400
+}) . addTo(map);
+
+// var hotel1 = L.marker([-7.6539068, 110.140812]).addTo(map)
+var hotel1 = L.marker([ -7.729105, 110.135865]).addTo(map)
+var hotel2 = L.marker([-7.773592, 110.179674]).addTo(map)
+
+circle.bindPopup("<b> Kawasan Air Terjun Kedung Pedut </b> <br>").openPopup();
+
+hotel1.bindPopup(
+    "<b>Penginapan Arumdalu Homestay</b><br>Harga per Malam : Rp. 148.000<br><br>Fasilitas : wifi gratis, jemlutan bandara, kolam renang, akses ke pantai, parkiran"
+);
+hotel2.bindPopup(
+    "<b>Wisma Pancoeran</b><br>Harga per Malam : Rp. 205.00<br><br>Fasilitas : wifi gratis, sarapan gratis, AC, kolam renang, parkir, restoran"
+);
+
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Kota Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Tebing Breksi</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Tebing Breksi merupakan tempat wisata berupa bekas penambangan kapur yang disulap menjadi destinasi wisata yang menjanjikan wisatawan yang melihatnya. Tempat wisata ini berada di Jl. Desa Lengkong, RT.02/RW.17, Gn. Sari, Sambirejo, Kec. Prambanan, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Buka setiap hari pukul 06:00 dan waktu tutup sekitar jam 22:00 dengan harga tiket masuk 10.000 per orang.</p>
+    <p class="my-8">Bertahun-tahun kawasan ini menjadi pundi-pundi ekonomi bagi warga sekitar yang melakukan penambangan batuan kapur. Kikis demi kikis tubuh batu kapur tua itu adalah sumber mata pencaharian utama mereka. Lalu tahun 2014 datang dan membawa peneliti gabungan dari Institut Teknologi Bandung (ITB) dan Universitas Pembangunan Nasional (UPN) meninjau Tebing Breksi. Hasilnya? Ditemukan jenis batuan tufan yang langka, sehingga Tebing Breksi ditetapkan sebagai salah satu Geoheritage Yogyakarta yang dilarang untuk ditambang lagi.</p>
+    <p class="my-8">Namun sejarah Tebing Breksi sebagai sumber penghasilan warga sekitar tak lantas berhenti. Setelah tidak lagi menjadi tambang, segelintir orang datang menikmati rona senja di Breksi dan iseng-iseng mengunggahnya ke sosial media. Dari sini, satu per satu wisatawan mulai berdatangan. Kini, penggarapan Tebing Breksi sudah sangat terlihat hasilnya. Menjulang setinggi sekitar 30 meter, batuan kapur raksasa berlapis-lapis ini sudah dipahat membentuk relief dan patung dari cerita pewayangan: pahatan Arjuna membunuh Buto Cakil; pahatan naga dengan mahkotanya; dan patung Semar. Semua karya pahatan ciptaan pemuda setempat, Anto. Dengan detail-detail di setiap karya pahatannya, mencerminkan seorang seniman yang telaten dan sabar. Itu yang menjadi ciri khas dari wisata tebing Breksi karena memiliki ukiran yang sulit.</p>
+    <p class="my-8">Anak tangga dibangun di sisi timur untuk kepentingan praktis naik ke tebing. Selain itu, dengan latar batuan kapur bermacam gradasi yang menjulang, di kawasan Tebing Breksi ada pula Tlatar Seneng serta amfiteater yang sering digunakan untuk kopi darat dan event nasional. Tlatar Seneng dengan bentuknya yang melingkar dan terbuat dari batu, langsung mengingatkan kita dengan teater tempat pertunjukkan drama dari zaman Yunani klasik.</p>
+    <p class="my-8">Ada pula tawaran objek-objek swafoto seperti yang lazim sekarang ini. Di samping burung hantu jinak di tangga masuk, setidaknya ada dua belas objek swafoto yang diletakkan di punggung tebing utama berselang-seling dengan rerumputan, kembang, dan pohon-pohon. Lalu, seperti di Bukit Bintang atau Candi Ijo, ada pula tawaran memandang kota Yogyakarta dari ketinggian. Dari ketinggian Breksi, pucuk-pucuk tiga candi utama Prambanan, pesawat-pesawat hilir mudik di Adisucipto, serta jalanan dan lampu-lampu Yogyakarta menjadi suguhan lanskap yang memanjakan dan menjadi daya tarik wisatawan.</p>
+    <p class="my-8">Diantarai oleh kolam ikan berair hijau dengan warna-warni koi, jalur putih kapur, dan meja-meja payung di atas rumput, di sisi paling timur kawasan Breksi berjejer lapak-lapak kuliner yang menawarkan berbagai macam menu. Ada tongseng, rica-rica, dan soto. Namun, barangkali yang paling terkenal adalah ayam ingkung Bu Asih, yang meskipun jauh dari pusat ingkung di Bantul, tetap sering dikunjungi oleh pejabat-pejabat yang ingin menyantap ingkung dengan suasana Breksi.</p>
+    <p class="my-8">Kini Tebing Breksi telah menjadi tempat wisata yang juga menorehkan prestasi. Tebing Breksi yang resmi dibuka tanggal 30 Mei 2015 dengan penandatanganan prasasti oleh Sri Sultan Hamengku Buwono X, telah mendapatkan penghargaan sebagai Tempat Wisata Baru Terpopuler 2017. Hal ini pantas-pantas saja, sebab di musim liburan, Tebing Breksi memang bisa mencatat jumlah pengunjung beribu-ribu.</p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Tebing Breksi
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/breksi/1.jpeg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/breksi/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/breksi/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/breksi/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/breksi/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/breksi/6.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var map = L.map('map').setView([-7.780708, 110.504785], 11);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.780708, 110.504785]).addTo(map);
+
+var circle = L.circle([-7.780708, 110.504785], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 500
+}) . addTo(map);
+
+circle.bindPopup("<b> Kawasan Wisata Tebing Breksi </b>").openPopup();
+
+var hotel1 = L.marker([-7.7105236, 110.3706829]).addTo(map);
+var hotel2 = L.marker([-7.7102353, 110.3559390]).addTo(map);
+var hotel3 = L.marker([-7.7459902, 110.3400741]).addTo(map);
+
+hotel1.bindPopup(
+    "<b>Java Village Resort </b><br>Harga per Malam : Rp. 469.000 <br><br>Fasilitas : wifi gratis,kolam renang luar,Ac,sarapan,restaurant "
+);
+hotel2.bindPopup(
+    "<b>Prima SR Hotel and Convention </b><br>Harga per Malam : Rp. 219.765 <br><br>Fasilitas : wifi, TV, parkir gratis,sarapan,Ac, restaurant "
+);
+hotel3.bindPopup(
+    "<b>House Acasia Syariah RedPartner </b><br>Harga per Malam : Rp. 138.339 <br><br>Fasilitas : : TV,Ac, parkir gratis, lemari "
+);
+</script>
+</body>
+
+</html>

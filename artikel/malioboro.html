@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Malioboro</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Malioboro merupakan suatu kawasan yang merupakan gabungan dari tiga jalan yaitu Jalan Margo Utomo, Jalan Malioboro dan Jalan Margo Mulyo. Kawasan yang legendaris tersebut membentang dari Tugu Jogja sepanjang 2,5 kilometer hingga ke perempatan Kantor Pos Yogyakarta. Keberadaannya yang tepat di titik 0 kilometer Kota Jogja ini membuat wisatawan sangat mudah untuk mencapainya. Untuk memasuki kawasan Malioboro, wisatawan tak dikenakan biaya sama sekali alias gratis. Wisatawan hanya perlu membayar biaya parkir saja.</p>
+    <p class="my-8">Penamaan Malioboro sendiri memiliki dua versi yang dipercaya masyarakat hingga kini. Versi pertama menyebutkan bahwa nama tersebut didapat dari seorang bangsawan bernama Marlborough ketika Indonesia berada dibawah kekuasaan Kerajaan Inggris pada tahun 1811 sampai 1816. Sedangkan pada versi kedua, nama tersebut diambil dari bahasa sansekerta yang dapat diartikan sebagai karangan bunga. Hal ini memang tak aneh, karena dulu ketika Kraton Yogyakarta tengah mengadakan upacara ataupun acara hajatan, Jalan Malioboro selalu ramai dipenuhi dengan karangan bunga.</p>
+    <p class="my-8">Dahulu jalan Malioboro merupakan jalan yang sepi, hanya dipenuhi pohon asam di bagian kiri dan kanan jalan. Jalan tersebut hanya digunakan ketika seseorang hendak menuju ke Keraton Yogyakarta. Keadaan pun berubah ketika warga Tionghoa datang di bumi Jogja. Pindahnya warga Tionghoa ke kawasan Malioboro kala itu ternyata memberikan berkah tersendiri. Kawasan yang mulanya sepi, diubah menjadi kawasan bisnis yang mulai ramai dihiasi oleh pertokoan. Kemajuan yang begitu pesat di kala itu, membuat kawasan perdagangan pun meluas hingga ke utara tepatnya di Stasiun Tugu. Sehingga kini Malioboro menjadi destinasi wisata yang wajib untuk dikunjungi jika datang ke wilayah Yogyakarta.</p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Malioboro
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/malioboro/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/malioboro/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/malioboro/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/malioboro/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/malioboro/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+var map = L.map('map').setView([-7.7925764,110.3636543], 15);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.7925764,110.3636543]).addTo(map);
+
+var circle = L.circle([-7.7925764,110.3636543], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 500
+}) . addTo(map);
+
+var hotel1 = L.marker([-7.7932202, 110.3641381]).addTo(map);
+var hotel2 = L.marker([-7.7910984,110.3571038]).addTo(map);
+var hotel3 = L.marker([-7.8017472,110.3678391]).addTo(map);
+var hotel4 = L.marker([-7.787678,110.3645097]).addTo(map);
+var hotel5 = L.marker([-7.7949893,110.3631516]).addTo(map);
+
+
+circle.bindPopup("<b> Kawasan Wisata Malioboro </b>").openPopup();
+
+hotel1.bindPopup(
+    "<b>Hotel Ibis Malioboro</b><br>Harga per Malam : Rp. 750.000<br><br>Fasilitas : AC, kolam renang, Wi-Fi, Restoran, Bar, Sarapan, Laundry, Penitipan Bagasi, Tempat Parkir, Gym, Sarapan, Resepsionis 24 jam."
+);
+hotel2.bindPopup(
+    "<b>Prima In Hotel Malioboro</b><br>Harga per Malam : Rp. 550.000<br><br>Fasilitas : AC, Restoran, Resepsionis 24 jam, parkir, lift, Wi-Fi, Bar, , Antar-Jemput bandara, Sewa mobil, Area merokok, kafe, area parkir, restoran, TV."
+);
+hotel3.bindPopup(
+    "<b>D' Senopati Malioboro Grand Hotel</b><br>Harga per Malam : Rp. 500.000<br><br>Fasilitas : AC, Restoran, kolam renang, resepsionis 24 jam, parkir, lift, Wi-Fi."
+);
+hotel4.bindPopup(
+    "<b>D' Senopati Malioboro Grand Hotel</b><br>Harga per Malam : Rp. 800.000<br><br>Fasilitas : AC, restoran, Kolam renang, Resepsionis 24 jam, parkir, Lift, Wi-Fi."
+);
+hotel5.bindPopup(
+    "<b>Bobobox Pods Malioboro</b><br>Harga per Malam : Rp. 200.000<br><br>Fasilitas : AC, Wi-Fi, Resepsionis 24 jam, Area merokok, Area bebas asap rokok."
+);
+
+
+
+</script>
+</body>
+
+</html>

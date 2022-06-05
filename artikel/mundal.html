@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Kota Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Sungai Mundal</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Taman Sungai Mudal adalah sebuah objek wisata alam terbuka yang terletak di Kabupaten Kulon Progo, yang menawarkan pesona sebuah kolam pemandian yang bersumber dari mata air alami dan mata airnya bersumber dari sebuah goa. </p>
+    <p class="my-8">Sejarah Taman Sungai Mudal Momentum Awalnya Dimulai Sekitar Tahun 2011, melalui program bersih-bersih saluran air yang dilakukan oleh masyarakat setempat. Niat awalnya upaya membersihkan saluran mata air yang bersumber dari sebuah goa. Karena airnya yang jernih selalu dipakai untuk kebutuhan masyarakat. Menyadari betapa besarnya potensi, dan pesona alam yang ada di Banyunganti, maka dimulailah penataan kawasan tersebut menjadi sebuah objek wisata. Lokasi dan alamat Taman Sungai Mudal berada di Dusun Banyunganti,Desa Jatimulyo,Kecamatan GiriMulyo,Kabupaten Kulon Progo,Provinsi Daerah Istimewa Yogyakarta(DIY). Jam operasional Taman Sungai Mudal bukadari pukul 08.00–16.00. Taman Sungai Mudal buka setiap hari selama seminggu. Harga Tiket Masuk Taman Sungai Mudal. Tiket masuk Taman Sungai Mudal adalah Rp.10.000 perorang.</p>
+    <p class="my-8">Para pengunjung dikenakan biaya tambahan, jika ingin menggunakan wahana lain. Fasilitas yang disediakan di Taman Sungai Mudal Kulon Progo sudah terbilang sangat lengkap untukmenunjang kenyamanan berwisata. Seperti: <br> 
+        1.Areaparkir <br>
+        2.Toilet <br>
+        3.Kantin <br>
+        4.Gazebo <br>
+        5.Ragamwahana <br> 
+        Fasilitas penunjang berenang.Daya tarik Ekowisata Taman Sungai Mudal yang disajikan untuk para pengunjung diklasifikasikan menjadi 2 hal.Yaitu:<br> 
+        1.KolamPemandian<br> 
+        2.TamanYangIndah 
+    </p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Sungai Mudal
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/mundal/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/mundal/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/mundal/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/mundal/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/mundal/5.png" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var map = L.map('map').setView([-7.762679, 110.116155], 12);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.762679, 110.116155]).addTo(map);
+
+var circle = L.circle([-7.762679, 110.116155], {
+    color: 'Green',
+    fillColor : 'Green',
+    fillOpacity : 0.5,
+    radius: 500
+}).addTo(map);
+
+circle.bindPopup("<b> Kawasan Wisata Sungai Mudal </b>").openPopup();
+
+var hotel1 = L.marker([-7.798058,110.118377 ]).addTo(map);
+var hotel2 = L.marker([ -7.803088,110.115475 ]).addTo(map);
+var hotel3 = L.marker([ -7.806744,110.111223 ]).addTo(map);
+
+hotel1.bindPopup(
+    "<b>Endro Homestay</b><br>Harga per Malam : Rp. 148.679 <br><br>Fasilitas : Ruang merokok, Teras, Tempat berjemur, Wifi, Parkir gratis, Shower, Layanan Laundry, Balkon."
+);
+
+hotel2.bindPopup(
+    "<b>Sutriyanto Homestay</b><br>Harga per Malam : Rp. 67.164 <br><br>Fasilitas : Teras, Ruang merokok, Tempat berjemur, Ruang tamu, Televisi dan parkir"
+);
+
+hotel3.bindPopup(
+    "<b>Homestay Mbak Karti</b><br>Harga per Malam : Rp. 137.654  <br><br>Fasilitas : Ruang merokok, Teras, Porter/Bell-boy, Tempat berjemur, Ruang tamu, Parkir gratis, Resepsionis 24jam."
+);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Candi Prambanan</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Candi Prambanan atau Candi Roro Jonggrang (bahasa Jawa: ꦕꦤ꧀ꦝꦶ​ꦥꦿꦩ꧀ꦧꦤꦤ꧀, translit. Candhi Prambanan) adalah kompleks candi Hindu (Syaiwa) terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Candi ini dipersembahkan untuk Trimurti, tiga dewa utama Hindu yaitu dewa Brahma sebagai dewa pencipta, dewa Wisnu sebagai dewa pemelihara, dan dewa Siwa sebagai dewa pemusnah. Berdasarkan prasasti Siwagrha nama asli kompleks candi ini adalah Siwagrha (bahasa Sanskerta yang bermakna 'Rumah Siwa'), dan memang di garbagriha (ruang utama) candi ini bersemayam arca Siwa Mahadewa setinggi tiga meter, dikarenakan aliran Syaiwa yang mengutamakan pemujaan dewa Siwa di candi ini.</p>
+    <p class="my-8">Kompleks percandian Candi Prambanan secara keseluruhan berada di wilayah provinsi Daerah Istimewa Yogyakarta, namun pintu administrasinya berada di Jawa Tengah, hal ini yang membuat Candi Prambanan terletak di 2 tempat yakni di kelurahan Bokoharjo, kapanéwon Prambanan, kabupaten Sleman, Daerah Istimewa Yogyakarta, dan di desa Tlogo, kecamatan Prambanan, kabupaten Klaten, Jawa Tengah, atau kurang lebih 17 kilometer timur laut dari kota Jogja, 50 kilometer barat daya dari kota Surakarta dan 120 kilometer selatan dari kota Semarang, persis di perbatasan antara Daerah Istimewa Yogyakarta dan Jawa Tengah.</p>
+    <p class="my-8">Candi ini adalah termasuk Situs Warisan Dunia UNESCO, candi Hindu terbesar di Indonesia, sekaligus salah satu candi terindah di Asia Tenggara. Arsitektur bangunan ini berbentuk tinggi dan ramping sesuai dengan arsitektur Hindu pada umumnya dengan candi Siwa sebagai candi utama memiliki ketinggian mencapai 47 meter menjulang di tengah kompleks gugusan candi-candi yang lebih kecil. Sebagai salah satu candi termegah di Asia Tenggara, candi Prambanan menjadi daya tarik kunjungan wisatawan dari seluruh dunia.</p>
+    <p class="my-8">Menurut prasasti Siwagrha, candi ini mulai dibangun pada sekitar tahun 850 masehi oleh Rakai Pikatan, dan terus dikembangkan dan diperluas oleh Balitung Maha Sambu, pada masa kerajaan Medang Mataram.</p>
+    <p class="my-8">Nama Prambanan, berasal dari nama desa tempat candi ini berdiri, diduga merupakan perubahan nama dialek bahasa Jawa dari istilah teologi Hindu Para Brahman yang bermakna "Brahman Agung" yaitu Brahman atau realitas abadi tertinggi dan teragung yang tak dapat digambarkan, yang kerap disamakan dengan konsep Tuhan dalam agama Hindu. Pendapat lain menganggap Para Brahman mungkin merujuk kepada masa jaya candi ini yang dahulu dipenuhi oleh para brahmana. Pendapat lain mengajukan anggapan bahwa nama "Prambanan" berasal dari akar kata mban dalam Bahasa Jawa yang bermakna menanggung atau memikul tugas, merujuk kepada para dewa Hindu yang mengemban tugas menata dan menjalankan keselarasan jagat.</p>
+    <p class="my-8">Nama lain dari Prambanan dapat berarti 5 (lima) gunung yang dalam bahasa Khmer/Kamboja 5 (lima) adalah Pram dan banam adalah gunung (ប្រាំភ្នំ). Hal ini menggambarkan 5 puncak gunung dari Himalaya di India. Mengingat pada saat yang sama dalam kronik Khmer bahwa Bangsa Jawa pernah menjajah Khmer selama 200 tahun dan Jayawarman ke 2 yang pernah di Jawa merupakan pahlawan yang membebaskan Khmer dari dominasi Jawa.</p>
+    <p class="my-8">Jam Buka Candi Prambanan Dikutip dari laman Antara, ada penyesuaian jam buka terbaru untuk para wisatawan Candi Prambanan selama masa pandemi. Yang pertama adalah Pruputan Prambanan yang diluar jam kunjung reguler yaitu pukul 06.30-08.00 WIB. Sementara jam kunjung reguler wisatawan berlangsung dari pukul 08.00-17.00 WIB. Adapun hari operasional menentukan kebijakan pemerintah untuk waktu-waktu yang diperbolehkan terutama di saat libur hari besar yang diinformasikan secara berkala.</p>
+    <p class="my-8">Tiket Masuk Candi Prambanan Berikut adalah tarif per orang untuk sekali masuk kawasan Candi Prambanan: <br>
+        Wisata Perorangan
+        <br>
+        - Dewasa : Rp 50.000
+        <br> 
+        - Anak (usia 3 s/d 10 tahun) : Rp 25.000
+        <br> 
+        - Batita (di bawah usia 3 tahun) : gratis
+        <br>
+        Wisata Rombongan Pelajar dan Mahasiswa (dengan surat pengantar dari sekolah/universitas, minimal 20 orang) 
+        <br>
+        - TWC Prambanan : Rp 25.000 
+        <br>
+        - Paket TWC Prambanan, Plaosan, dan Sojiwan: Rp 30.000 
+        <br>    
+        Lokasi Candi Prambanan Candi Prambanan berada di Kranggan, Bokoharjo, Kecamatan Prambanan, Kabupaten Sleman, Daerah Istimewa Yogyakarta. Jika diamati, secara geografis candi ini masih berada di kaki gunung Merapi. Untuk mengaksesnya Anda bisa menggunakan kendaraan umum Transjogja yang menyediakan trayek dengan rute menuju terminal Prambanan. Selain itu, Anda juga bisa menggunakan kereta lokal atau KRL sesuai jadwal. Namun jika memilih menggunakan kendaraan pribadi dari arah Solo dan juga arah Yogyakarta, Anda bisa mengikuti rute di Google Map.
+        </p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Candi Prambanan
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/prambanan/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/prambanan/2.jpeg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/prambanan/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/prambanan/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/prambanan/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var map = L.map('map').setView([-7.752098, 110.491404], 15);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.752098, 110.491404]).addTo(map);
+
+var circle = L.circle([-7.752098, 110.491404], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 400
+}) . addTo(map);
+
+var hotel1 = L.marker([-7.752092,110.484998]).addTo(map);
+var hotel2 = L.marker([-7.751234,110.499623]).addTo(map);
+var hotel3 = L.marker([-7.749417,110.500864]).addTo(map);
+
+circle.bindPopup("<b> Kawasan Wisata Candi Prambanan </b>").openPopup();
+
+hotel1.bindPopup(
+    "<b>Penginapan Damandiri Prambanan Syariah</b><br>Harga per Malam : Rp. 208.000<br><br>Fasilitas : meja, area merokok, area parkir, resepsionis 24jam"
+);
+hotel2.bindPopup(
+    "<b>Algira Homestay Prambanan</b><br>Harga per Malam : Rp. 280.000<br><br>Fasilitas : meja, AC, Lemari, dapur"
+);
+hotel3.bindPopup(
+    "<b>Hotel Galuh Prambanan</b><br>Harga per Malam : Rp. 375.000<br><br>Fasilitas : meja, wifi, kolam renang outdoor, area merokok, teras, resepsionis 24jam"
+);
+
+</script>
+</body>
+
+</html>

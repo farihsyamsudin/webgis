@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Destinasi Wisata Kota Jogjakarta</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    boxShadow: {
+                        '3xl' : '-4px -3px 45px 15px rgba(0, 0, 0, 0.75)',
+                        '0xl' : '0 25px 25px -25px rgba(0, 0, 0, 0.75)',
+                    }
+                    },
+                },
+            };
+    </script>	
+</head>
+
+<body class="bg-slate-500">
+
+<div id="judulartikel" class="text-5xl text-center p-10">Wisata Candi Borobudur</div>
+
+<div id="map" class="max-w-5xl h-[400px] mb-[50px] mx-auto mt-[20px] shadow-3xl"></div>
+
+<div class="p-8">
+    <p class="my-8">Candi Borobudur merupakan candi Buddha yang sekelilingnya merupakan taman luas dan berada di tengah gunung-gunung menjulang tinggi. Candi Borobudur terletak di desa Borobudur, Kecamatan Borobudur, Kabupaten Magelang, Jawa Tengah. Candi Borobudur juga masuk daftar tujuh keajaiban dunia. Candi umat Buddha ini dikelilingi taman luas dan berada di tengah gunung-gunung yang menjulang tinggi.</p>
+    <p class="my-8">Mengutip dari jurnal Pengaruh Taman Wisata Candi Borobudur Terhadap Kondisi Kehidupan Sosial Ekonomi Masyarakat Kabupaten Magelang 1980-1997 bangunan candi dibangun pada abad ke-8 Masehi. Candi ini mulai diresmikan menjadi tempat wisata pada 15 Juli 1980. Kemudian, candi Borobudur ditetapkan sebagai Pusaka Budaya Dunia oleh UNESCO pada 1991.</p>
+    <p class="my-8">Mengutip jurnal Pesona Candi Borobudur Sebagai Wisata Budaya Di Jawa Tengah karya Reza Ayu Dewanti, candi Borobudur merupakan peninggalan dinasti Syailendra. Candi ini didirikan oleh penganut agama Buddha Mahayana. Bangunan ini dibentuk sekitar abad ke-8 pada masa pemerintahan wangsa Syailendra. Candi Borobudur termasuk kuil Buddha terbesar di dunia. Tujuan dibangun Candi Borobudur untuk memuliakan raja-raja Syailendra (775-850 M) yang telah bersatu kembali dengan dewa yang menjadi asal beliau. Candi dibangun sebagai ungkapan nyata dan rasa hormat mendalam pada leluhur. Selain itu, bangunan candi dipakai sebagai kesadaran terhadap kebesaran agama.</p>
+    <p class="my-8">Candi Borobudur melambangkan alam semesta. Dalam agama Buddha, semesta dibagi menjadi tiga tingkat yaitu kamadhatu (dunia keinginan), rupadhatu (dunia berbentuk) dan arupadhatu (dunia tak terbentuk). Ketiga tingkat ini dibedakan berdasarkan relief-relief candi. Relief ini dibentangkan sepanjang 3 meter. Terdapat 1.460 pigura yang diselingi bidang-bidang pemisah berjumlah sekitar 1.212 buah. Di atas deretan pigura terdapat semacam pelipit yang membujur, memanjang sejauh satu setengah kilometer. Pelipit ini dihias dan membentuk rangkaian bunga teratai. Di bagian tas terdapat hiasan simbar berbentuk segitiga berjumlah 1.476 buah. Tingkat kamadhatu dan rupadhatu terdapat 1.472 stupa dan 432 arca Buddha yang mengitari seluruh penjuru mata angin. Pada tingkat terakhir terdapat 72 buah stupa yang melingkari stupa induk di puncak. Dibutuhkan sekitar dua juta potongan batu untuk membangun monumen ini. Candi Borobudur secara keseluruhan terdiri dari stupa. Stupa adalah salah satu bangunan tanda peringatan agama Buddha. Dalam bahasa Sansekerta, stupa berarti gundukan atau timbunan tanah. Candi ini berada di Borobudur berada di daerah dataran Kedu yang dikelilingi oleh gunung Merapi dan Merbabu di sebelah Timur, Gunung Sindoro dan Sumbing di sebelah utara, dan pegunungan Menoreh di sebelah Selatan.</p>
+    <p class="my-8">Candi Borobudur telah dipugar beberapa kali. Pemugaran Candi Borobudur dilakukan pertama kali oleh Th. Van Erp dari tahun 1907 sampai 1911. Pemugaran kedua dilakukan pemerintah Indonesia yang bekerjasama dengan UNESCO. Pengerjaan pemugaran kedua ini berlangsung dari tahun 1973 sampai 1983.</p>
+</div>
+
+<div class="text-center text-6xl italic bg-slate-300 max-w-[700px] rounded-lg mx-auto">
+    Gallery Candi Borobudur
+</div>
+
+<div id="gallery" class="flex flex-wrap justify-around p-20">
+    <img src="../img/borobudur/1.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/borobudur/2.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/borobudur/3.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/borobudur/4.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/borobudur/5.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+    <img src="../img/borobudur/6.jpg" alt="" class="w-[500px] m-4 border-2 rounded-md shadow-2xl">
+</div>
+
+<script>
+    
+var map = L.map('map').setView([-7.608000, 110.204000], 15);
+
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		maxZoom: 18,
+		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		id: 'mapbox/streets-v11',
+		tileSize: 512,
+		zoomOffset: -1
+}).addTo(map);
+
+// var marker = L.marker([-7.608000, 110.204000]).addTo(map);
+
+var circle = L.circle([-7.608000, 110.204000], {
+    color: 'green',
+    fillColor : 'green',
+    fillOpacity : 0.5,
+    radius: 400
+}) . addTo(map);
+
+var hotel1 = L.marker([-7.6090183, 110.2111715]).addTo(map);
+var hotel3 = L.marker([-7.600665, 110.202431]).addTo(map);
+
+
+circle.bindPopup("<b> Kawasan Wisata Candi Borobudur </b>").openPopup();
+
+hotel1.bindPopup(
+    "<b>Penginapan Genthong Homestay</b><br>Harga per Malam : Rp.199,000 - Rp.310.000<br><br>Fasilitas : WiFi, parkir, kamar ber AC, jemputan bandara, dapur dibeberapa kamar, tidak diizinkan membawa hewan peliharaan dan tidak ada kolam berenang"
+);
+
+hotel3.bindPopup(
+    "<b>Penginapan Borobudur Homestay bukit dagi</b><br>Harga per Malam : Rp.96000<br>Fasilitas : Parkir gratis, Layananbinatu, cocok untuk anak-anak"
+);
+</script>
+</body>
+
+</html>
